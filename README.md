@@ -25,7 +25,6 @@ Add AboutBox configuration to your Application class
 ```java
         AboutConfig aboutConfig = AboutConfig.getInstance();
         aboutConfig.appName = APP_NAME;
-        //To ADD
         aboutConfig.appIcon = R.mipmap.ic_launcher;
 
         aboutConfig.version = "1.0.0";
