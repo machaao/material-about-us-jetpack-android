@@ -13,6 +13,7 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import android.content.Intent
+import androidx.compose.ui.graphics.vector.ImageVector
 import androidx.core.content.ContextCompat.startActivity
 import com.mx.aboutpage.ui.theme.typography
 
@@ -24,115 +25,115 @@ fun socialCards(activity: Activity, config: AboutConfig) {
     val twittericon = vectorResource(R.drawable.ic_twitter)
     val webIcon = vectorResource(R.drawable.ic_web)
     Card(
-            modifier = Modifier
-                    .padding(8.dp)
-                    .fillMaxWidth(),
-            elevation = 4.dp
+        modifier = Modifier
+            .padding(8.dp)
+            .fillMaxWidth(),
+        elevation = 4.dp
     )
     {
         Column() {
-            if(config.facebookUserName!=null&&config.facebookUserPageId!=null)  Row(
-                    modifier = Modifier
-                            .fillMaxSize()
-                            .clickable(
-                                    onClick = {
-                                        getOpenFacebookIntent(activity, config)
-                                    }
-                            ),
-                    verticalAlignment = Alignment.CenterVertically
+            if (config.facebookUserName != null && config.facebookUserPageId != null) Row(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .clickable(
+                        onClick = {
+                            getOpenFacebookIntent(activity, config)
+                        }
+                    ),
+                verticalAlignment = Alignment.CenterVertically
             ) {
 
                 Image(
-                        alignment = Alignment.Center,
-                        imageVector = fbicon,
-                        modifier = Modifier
-                                .padding(8.dp)
-                                .fillMaxHeight(),
-                        contentScale = ContentScale.FillBounds
+                    alignment = Alignment.Center,
+                    imageVector = fbicon,
+                    modifier = Modifier
+                        .padding(8.dp)
+                        .fillMaxHeight(),
+                    contentScale = ContentScale.FillBounds
 
                 )
                 Column() {
                     Text(
-                            text = "Facebook",
-                            modifier = Modifier.padding(8.dp, top = 8.dp, bottom = 0.dp),
-                            style = typography.subtitle1
+                        text = "Facebook",
+                        modifier = Modifier.padding(8.dp, top = 8.dp, bottom = 0.dp),
+                        style = typography.subtitle1
 
                     )
                     Text(
-                            text = "MessengerX",
-                            modifier = Modifier.padding(8.dp, top = 0.dp, bottom = 8.dp),
-                            style = typography.body2
+                        text = "MessengerX",
+                        modifier = Modifier.padding(8.dp, top = 0.dp, bottom = 8.dp),
+                        style = typography.body2
 
                     )
                 }
 
             }
-            if(config.twitterUserName!=null) Row(
-                    modifier = Modifier
-                            .fillMaxSize()
-                            .clickable(
-                                    onClick = {
-                                        startTwitter(activity, config)
-                                    }
-                            ),
-                    verticalAlignment = Alignment.CenterVertically
+            if (config.twitterUserName != null) Row(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .clickable(
+                        onClick = {
+                            startTwitter(activity, config)
+                        }
+                    ),
+                verticalAlignment = Alignment.CenterVertically
             ) {
                 Image(
-                        alignment = Alignment.Center,
-                        imageVector = twittericon,
-                        modifier = Modifier
-                                .padding(8.dp)
-                                .fillMaxHeight(),
-                        contentScale = ContentScale.FillBounds
+                    alignment = Alignment.Center,
+                    imageVector = twittericon,
+                    modifier = Modifier
+                        .padding(8.dp)
+                        .fillMaxHeight(),
+                    contentScale = ContentScale.FillBounds
 
                 )
                 Column() {
                     Text(
-                            text = "Twitter",
-                            modifier = Modifier.padding(8.dp, top = 8.dp, bottom = 0.dp),
-                            style = typography.subtitle1
+                        text = "Twitter",
+                        modifier = Modifier.padding(8.dp, top = 8.dp, bottom = 0.dp),
+                        style = typography.subtitle1
 
                     )
                     Text(
-                            text = "MessengerX",
-                            modifier = Modifier.padding(8.dp, top = 0.dp, bottom = 8.dp),
-                            style = typography.body2
+                        text = "MessengerX",
+                        modifier = Modifier.padding(8.dp, top = 0.dp, bottom = 8.dp),
+                        style = typography.body2
 
                     )
                 }
             }
-          if(config.companyHtmlPath!=null)  Row(
-                    modifier = Modifier
-                            .fillMaxSize()
-                            .clickable(
-                                    onClick = {
-                                        openHTMLPage(
-                                                activity, config.companyHtmlPath
-                                        )
-                                    }
-                            ),
-                    verticalAlignment = Alignment.CenterVertically
+            if (config.companyHtmlPath != null) Row(
+                modifier = Modifier
+                    .fillMaxSize()
+                    .clickable(
+                        onClick = {
+                            openHTMLPage(
+                                activity, config.companyHtmlPath
+                            )
+                        }
+                    ),
+                verticalAlignment = Alignment.CenterVertically
             ) {
                 Image(
-                        alignment = Alignment.Center,
-                        imageVector = webIcon,
-                        modifier = Modifier
-                                .padding(8.dp)
-                                .fillMaxHeight(),
-                        contentScale = ContentScale.FillBounds
+                    alignment = Alignment.Center,
+                    imageVector = webIcon,
+                    modifier = Modifier
+                        .padding(8.dp)
+                        .fillMaxHeight(),
+                    contentScale = ContentScale.FillBounds
 
                 )
                 Column() {
                     Text(
-                            text = "Website",
-                            modifier = Modifier.padding(8.dp, top = 8.dp, bottom = 0.dp),
-                            style = typography.subtitle1
+                        text = "Website",
+                        modifier = Modifier.padding(8.dp, top = 8.dp, bottom = 0.dp),
+                        style = typography.subtitle1
 
                     )
                     Text(
-                            text = "MessengerX.io",
-                            modifier = Modifier.padding(8.dp, top = 0.dp, bottom = 8.dp),
-                            style = typography.body2
+                        text = "MessengerX.io",
+                        modifier = Modifier.padding(8.dp, top = 0.dp, bottom = 8.dp),
+                        style = typography.body2
 
                     )
                 }
@@ -149,63 +150,63 @@ fun privacyCards(activity: Activity, config: AboutConfig) {
     val acknowledgementIcon = vectorResource(R.drawable.ic_acknowledgement)
 
     Card(
-            modifier = Modifier
-                    .padding(8.dp)
-                    .fillMaxWidth(),
-            elevation = 4.dp
+        modifier = Modifier
+            .padding(8.dp)
+            .fillMaxWidth(),
+        elevation = 4.dp
     )
     {
         Column() {
             if (config.privacyHtmlPath != null) Row(
-                    modifier = Modifier
-                            .fillMaxSize()
-                            .clickable(
-                                    onClick = {
-                                        openHTMLPage(
-                                                activity, config.privacyHtmlPath
-                                        )
-                                    }
-                            ),
-                    verticalAlignment = Alignment.CenterVertically
+                modifier = Modifier
+                    .fillMaxSize()
+                    .clickable(
+                        onClick = {
+                            openHTMLPage(
+                                activity, config.privacyHtmlPath
+                            )
+                        }
+                    ),
+                verticalAlignment = Alignment.CenterVertically
             ) {
                 Image(
-                        alignment = Alignment.Center,
-                        imageVector = privacyIcon,
-                        modifier = Modifier
-                                .padding(8.dp)
-                                .fillMaxHeight(),
-                        contentScale = ContentScale.FillBounds
+                    alignment = Alignment.Center,
+                    imageVector = privacyIcon,
+                    modifier = Modifier
+                        .padding(8.dp)
+                        .fillMaxHeight(),
+                    contentScale = ContentScale.FillBounds
 
                 )
                 Text(
-                        text = "Privacy Policy ",
-                        modifier = Modifier.padding(8.dp)
+                    text = "Privacy Policy ",
+                    modifier = Modifier.padding(8.dp)
                 )
             }
             if (config.acknowledgmentHtmlPath != null) Row(
-                    modifier = Modifier
-                            .fillMaxSize()
-                            .clickable(
-                                    onClick = {
-                                        openHTMLPage(
-                                                activity, config.acknowledgmentHtmlPath
-                                        )
-                                    }
-                            ),
-                    verticalAlignment = Alignment.CenterVertically
+                modifier = Modifier
+                    .fillMaxSize()
+                    .clickable(
+                        onClick = {
+                            openHTMLPage(
+                                activity, config.acknowledgmentHtmlPath
+                            )
+                        }
+                    ),
+                verticalAlignment = Alignment.CenterVertically
             ) {
                 Image(
-                        alignment = Alignment.Center,
-                        imageVector = acknowledgementIcon,
-                        modifier = Modifier
-                                .padding(8.dp)
-                                .fillMaxHeight(),
-                        contentScale = ContentScale.FillBounds
+                    alignment = Alignment.Center,
+                    imageVector = acknowledgementIcon,
+                    modifier = Modifier
+                        .padding(8.dp)
+                        .fillMaxHeight(),
+                    contentScale = ContentScale.FillBounds
 
                 )
                 Text(
-                        text = "Acknowledgement",
-                        modifier = Modifier.padding(8.dp)
+                    text = "Acknowledgement",
+                    modifier = Modifier.padding(8.dp)
                 )
             }
         }
@@ -218,65 +219,67 @@ fun tryOtherApp(activity: Activity, config: AboutConfig) {
     val tryOtherIcon = vectorResource(R.drawable.ic_try_other_apps)
     val aboutIcon = vectorResource(R.drawable.ic_about)
     Card(
-            modifier = Modifier
-                    .padding(8.dp)
-                    .fillMaxWidth(),
-            elevation = 4.dp
+        modifier = Modifier
+            .padding(8.dp)
+            .fillMaxWidth(),
+        elevation = 4.dp
     )
     {
         Column() {
-          if(config.appPublisher!=null)  Row(
+            if (config.appPublisher != null) Row(
 
-                    modifier = Modifier
-                            .fillMaxSize()
-                            .clickable(
-                                    onClick = {
-                                        openPublisher(
-                                                activity,
-                                                config
-                                        )
-                                    }
-                            ),
-                    verticalAlignment = Alignment.CenterVertically
+                modifier = Modifier
+                    .fillMaxSize()
+                    .clickable(
+                        onClick = {
+                            openPublisher(
+                                activity,
+                                config
+                            )
+                        }
+                    ),
+                verticalAlignment = Alignment.CenterVertically
             ) {
                 Image(
-                        alignment = Alignment.Center,
-                        imageVector = tryOtherIcon,
-                        modifier = Modifier
-                                .padding(8.dp)
-                                .fillMaxHeight(),
-                        contentScale = ContentScale.FillBounds
+                    alignment = Alignment.Center,
+                    imageVector = tryOtherIcon,
+                    modifier = Modifier
+                        .padding(8.dp)
+                        .fillMaxHeight(),
+                    contentScale = ContentScale.FillBounds
 
                 )
                 Text(
-                        text = "Try Other Apps",
-                        modifier = Modifier.padding(8.dp)
+                    text = "Try Other Apps",
+                    modifier = Modifier.padding(8.dp)
                 )
             }
-           if(config.webHomePage!=null) Row(
+            if (config.webHomePage != null) Row(
 
-                    modifier = Modifier.fillMaxSize() .clickable(
-                            onClick = {
-                               openHTMLPage(
-                                       activity,
-                                       config.webHomePage
-                               )
-                            }
+                modifier = Modifier
+                    .fillMaxSize()
+                    .clickable(
+                        onClick = {
+                            openHTMLPage(
+                                activity,
+                                config.webHomePage
+                            )
+                        }
                     ),
-                    verticalAlignment = Alignment.CenterVertically
+                verticalAlignment = Alignment.CenterVertically
             ) {
                 Image(
-                        alignment = Alignment.Center,
-                        imageVector = aboutIcon,
-                        modifier = Modifier
-                                .padding(8.dp)
-                                .fillMaxHeight(),
-                        contentScale = ContentScale.FillBounds
+                    alignment = Alignment.Center,
+                    imageVector = aboutIcon,
+                    modifier = Modifier
+                        .padding(8.dp)
+                        .fillMaxHeight(),
+                    contentScale = ContentScale.FillBounds
 
                 )
                 Text(
-                        text = "About MessengerX Beta",
-                        modifier = Modifier.padding(8.dp)
+                    text = "About MessengerX Beta",
+                    modifier = Modifier.padding(8.dp)
                 )
             }
 
@@ -290,65 +293,65 @@ fun reviewCards(activity: Activity, config: AboutConfig) {
     val reviewIcon = vectorResource(R.drawable.ic_review)
     val shareIcon = vectorResource(R.drawable.ic_share)
     Card(
-            modifier = Modifier
-                    .padding(8.dp)
-                    .fillMaxWidth(),
-            elevation = 4.dp
+        modifier = Modifier
+            .padding(8.dp)
+            .fillMaxWidth(),
+        elevation = 4.dp
     )
     {
         Column() {
             if (config.packageName != null) Row(
-                    modifier = Modifier
-                            .fillMaxSize()
-                            .clickable(
-                                    onClick = {
-                                        openApp(
-                                                activity,
-                                                config
-                                        )
-                                    }
-                            ),
-                    verticalAlignment = Alignment.CenterVertically
+                modifier = Modifier
+                    .fillMaxSize()
+                    .clickable(
+                        onClick = {
+                            openApp(
+                                activity,
+                                config
+                            )
+                        }
+                    ),
+                verticalAlignment = Alignment.CenterVertically
             ) {
                 Image(
-                        alignment = Alignment.Center,
-                        imageVector = reviewIcon,
-                        modifier = Modifier
-                                .padding(8.dp)
-                                .fillMaxHeight(),
-                        contentScale = ContentScale.FillBounds
+                    alignment = Alignment.Center,
+                    imageVector = reviewIcon,
+                    modifier = Modifier
+                        .padding(8.dp)
+                        .fillMaxHeight(),
+                    contentScale = ContentScale.FillBounds
 
                 )
                 Text(
-                        text = "Leave Review",
-                        modifier = Modifier.padding(8.dp)
+                    text = "Leave Review",
+                    modifier = Modifier.padding(8.dp)
                 )
             }
             if (config.packageName != null && config.shareMessage != null) Row(
 
-                    modifier = Modifier
-                            .fillMaxSize()
-                            .clickable(
-                                    onClick = {
-                                        share(activity = activity, config = config)
-                                    }
-                            ),
-                    verticalAlignment = Alignment.CenterVertically,
+                modifier = Modifier
+                    .fillMaxSize()
+                    .clickable(
+                        onClick = {
+                            share(activity = activity, config = config)
+                        }
+                    ),
+                verticalAlignment = Alignment.CenterVertically,
 
 
-                    ) {
+                ) {
                 Image(
-                        alignment = Alignment.Center,
-                        imageVector = shareIcon,
-                        modifier = Modifier
-                                .padding(8.dp)
-                                .fillMaxHeight(),
-                        contentScale = ContentScale.FillBounds
+                    alignment = Alignment.Center,
+                    imageVector = shareIcon,
+                    modifier = Modifier
+                        .padding(8.dp)
+                        .fillMaxHeight(),
+                    contentScale = ContentScale.FillBounds
 
                 )
                 Text(
-                        text = "Share",
-                        modifier = Modifier.padding(8.dp)
+                    text = "Share",
+                    modifier = Modifier.padding(8.dp)
                 )
             }
 
@@ -361,36 +364,37 @@ fun reviewCards(activity: Activity, config: AboutConfig) {
 fun supportCard(activity: Activity, config: AboutConfig) {
     val supportIcon = vectorResource(R.drawable.ic_email)
     Card(
-            modifier = Modifier
-                    .padding(8.dp)
-                    .fillMaxWidth(),
-            elevation = 4.dp
+        modifier = Modifier
+            .padding(8.dp)
+            .fillMaxWidth(),
+        elevation = 4.dp
     )
     {
-        if(config.emailAddress!=null)Row(
+        if (config.emailAddress != null) Row(
 
-                modifier = Modifier
-                        .fillMaxSize()
-                        .clickable(
-                                onClick = {
-                                    sendEmail(
-                                            activity, config = config)
-                                }
-                        ),
-                verticalAlignment = Alignment.CenterVertically
+            modifier = Modifier
+                .fillMaxSize()
+                .clickable(
+                    onClick = {
+                        sendEmail(
+                            activity, config = config
+                        )
+                    }
+                ),
+            verticalAlignment = Alignment.CenterVertically
         ) {
             Image(
-                    alignment = Alignment.Center,
-                    imageVector = supportIcon,
-                    modifier = Modifier
-                            .padding(8.dp)
-                            .fillMaxHeight(),
-                    contentScale = ContentScale.FillBounds
+                alignment = Alignment.Center,
+                imageVector = supportIcon,
+                modifier = Modifier
+                    .padding(8.dp)
+                    .fillMaxHeight(),
+                contentScale = ContentScale.FillBounds
 
             )
             Text(
-                    text = "Contact Support",
-                    modifier = Modifier.padding(8.dp)
+                text = "Contact Support",
+                modifier = Modifier.padding(8.dp)
             )
         }
     }
@@ -398,48 +402,50 @@ fun supportCard(activity: Activity, config: AboutConfig) {
 
 @Composable
 fun topCards(config: AboutConfig) {
-
-    val supportIcon = vectorResource(R.drawable.ic_green)
+    var supportIcon: ImageVector = vectorResource(R.drawable.ic_web)
+    if (config.appIcon != null) {
+        supportIcon = vectorResource(config.appIcon!!.toInt())
+    }
     Card(
-            modifier = Modifier
-                    .padding(8.dp)
-                    .fillMaxWidth(),
-            elevation = 4.dp
+        modifier = Modifier
+            .padding(8.dp)
+            .fillMaxWidth(),
+        elevation = 4.dp
     )
     {
         if (config.appName != null && config.version != null) Row(
 
-                modifier = Modifier.fillMaxSize(),
-                verticalAlignment = Alignment.CenterVertically
+            modifier = Modifier.fillMaxSize(),
+            verticalAlignment = Alignment.CenterVertically
         ) {
-            Image(
-                    alignment = Alignment.Center,
-                    imageVector = supportIcon,
-                    modifier = Modifier
-                            .padding(8.dp)
-                            .fillMaxHeight(),
-                    contentScale = ContentScale.FillBounds
+            if (config.appIcon != null) Image(
+                alignment = Alignment.Center,
+                imageVector = supportIcon,
+                modifier = Modifier
+                    .padding(8.dp)
+                    .fillMaxHeight(),
+                contentScale = ContentScale.FillBounds
 
             )
             Column() {
                 Text(
-                        text = "${config.appName}",
-                        modifier = Modifier.padding(8.dp)
+                    text = "${config.appName}",
+                    modifier = Modifier.padding(8.dp)
                 )
                 Text(
-                        text = "Version",
-                        style = typography.subtitle2,
-                        modifier = Modifier.padding(8.dp)
+                    text = "Version",
+                    style = typography.subtitle2,
+                    modifier = Modifier.padding(8.dp)
                 )
                 Text(
-                        text = "${config.version}",
-                        style = typography.body2,
-                        modifier = Modifier.padding(
-                                start = 8.dp,
-                                end = 8.dp,
-                                top = 0.dp,
-                                bottom = 8.dp
-                        )
+                    text = "${config.version}",
+                    style = typography.body2,
+                    modifier = Modifier.padding(
+                        start = 8.dp,
+                        end = 8.dp,
+                        top = 0.dp,
+                        bottom = 8.dp
+                    )
                 )
             }
         }
@@ -457,7 +463,7 @@ fun share(activity: Activity, config: AboutConfig) {
 
 
     shareMessage =
-            shareMessage + "https://play.google.com/store/apps/details?id=" + config.packageName;
+        shareMessage + "https://play.google.com/store/apps/details?id=" + config.packageName;
 
 
     intent2.putExtra(Intent.EXTRA_TEXT, shareMessage);

@@ -5,7 +5,7 @@ class AboutConfig {
 
     //    general info
     var appName: String? = null
-    var appIcon = 0
+    var appIcon :Int ? = null
     var version: String? = null
     var aboutLabelTitle: String? = null
     var facebookUserPageId: String? = null

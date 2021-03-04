@@ -13,6 +13,7 @@ class MainActivity : AppCompatActivity() {
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         aboutConfig.appName = "Messengerx"
+        aboutConfig.appIcon=R.drawable.ic_green
         aboutConfig.version = "1.0.0"
         aboutConfig.aboutLabelTitle = "About App"
         aboutConfig.packageName = applicationContext.packageName
