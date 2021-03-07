@@ -3,8 +3,10 @@ dependencyResolutionManagement {
     repositories {
         google()
         jcenter()
+        mavenCentral()
+
     }
 }
 rootProject.name = "example"
-include ':app'
+//include ':app'
 include ':library'
