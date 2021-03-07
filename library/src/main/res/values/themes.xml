@@ -1,9 +1,9 @@
-<resources>
+<resources  xmlns:tools="http://schemas.android.com/tools">
 
-    <style name="Theme.Example.NoActionBar">
-        <item name="windowActionBar">false</item>
-        <item name="windowNoTitle">true</item>
-    </style>
+<!--    <style name="Theme.Example.NoActionBar">-->
+<!--        <item name="windowActionBar">false</item>-->
+<!--        <item name="windowNoTitle">true</item>-->
+<!--    </style>-->
 
     <style name="Theme.Example.AppBarOverlay" parent="ThemeOverlay.AppCompat.Dark.ActionBar" />
 

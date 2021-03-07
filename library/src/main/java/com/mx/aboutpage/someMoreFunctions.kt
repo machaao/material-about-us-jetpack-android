@@ -19,14 +19,17 @@ import android.os.Build
 import android.text.TextUtils
 
 
-fun getOpenFacebookIntent(context: Activity,config: AboutConfig) {
+fun getOpenFacebookIntent(context: Activity, config: AboutConfig) {
     try {
         context.packageManager.getPackageInfo("com.facebook.katana", 0)
         val intent = Intent(Intent.ACTION_VIEW, Uri.parse("fb://page/${config.facebookUserPageId}"))
         context.startActivity(intent)
     } catch (e: Exception) {
         try {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://www.facebook.com/${config.facebookUserName}"))
+            val intent = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://www.facebook.com/${config.facebookUserName}")
+            )
             context.startActivity(intent)
         } catch (e1: Exception) {
             Toast.makeText(context, "Cant Open ", Toast.LENGTH_SHORT).show()
@@ -37,12 +40,18 @@ fun getOpenFacebookIntent(context: Activity,config: AboutConfig) {
 fun startTwitter(context: Activity, config: AboutConfig) {
     try {
         context.packageManager.getPackageInfo("com.twitter.android", 0)
-        val intent = Intent(Intent.ACTION_VIEW, Uri.parse("twitter://user?screen_name=${config.twitterUserName}"))
+        val intent = Intent(
+            Intent.ACTION_VIEW,
+            Uri.parse("twitter://user?screen_name=${config.twitterUserName}")
+        )
         intent.addFlags(Intent.FLAG_ACTIVITY_NEW_TASK)
         context.startActivity(intent)
     } catch (e: Exception) {
         try {
-            val intent = Intent(Intent.ACTION_VIEW, Uri.parse("https://twitter.com/${config.twitterUserName}"))
+            val intent = Intent(
+                Intent.ACTION_VIEW,
+                Uri.parse("https://twitter.com/${config.twitterUserName}")
+            )
             context.startActivity(intent)
         } catch (e1: Exception) {
             Toast.makeText(context, "Cant Open ", Toast.LENGTH_SHORT).show()
@@ -51,27 +60,26 @@ fun startTwitter(context: Activity, config: AboutConfig) {
 }
 
 fun openApp(context: Activity, config: AboutConfig) {
-    var appURI: String? = null
-    var webURI: String? = null
-
-    appURI = "market://details?id=${config.packageName}"
-    webURI = "https://play.google.com/store/apps/details?id=${config.packageName}"
 
 
-    openApplication(context, appURI, webURI)
+    openApplication(
+        context,
+        "market://details?id=${config.packageName}",
+        "https://play.google.com/store/apps/details?id=${config.packageName}"
+    )
 }
 
 fun openPublisher(
-        context: Activity,
-        config: AboutConfig
+    context: Activity,
+    config: AboutConfig
 ) {
-    var appURI: String? = null
-    var webURI: String? = null
 
-    appURI = "market://search?q=pub:${config.appPublisher}"
-    webURI = "https://play.google.com/store/apps/developer?id=${config.appPublisher}"
 
-    openApplication(context, appURI, webURI)
+    openApplication(
+        context,
+        "market://search?q=pub:${config.appPublisher}",
+        "https://play.google.com/store/apps/developer?id=${config.appPublisher}"
+    )
 }
 
 fun openApplication(context: Activity, appURI: String?, webURI: String?) {
