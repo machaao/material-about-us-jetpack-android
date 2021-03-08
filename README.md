@@ -15,8 +15,23 @@ You can omit most features if they don't apply (e.g. like website), by not setti
 A Example is available in the repo 
 
 ## Installation Instructions
+Add MavenCentral As a repository in project build.gradle file
+```
+repositories {
+        google()
+        jcenter()
+        mavenCentral()//NEW
+    }
+```
 
- TO be added soon
+In app build.gradle dependencies add 
+
+```
+implementation 'com.github.amanv8060:aboutpagelib:1.0.1'
+
+```
+
+and you are good to go 
 
 ## Setup AboutBox
 
