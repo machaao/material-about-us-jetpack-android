@@ -3,8 +3,6 @@ plugins {
     id 'kotlin-android' // NEW
     id 'maven-publish'
 }
-group = 'com.github.amanv8060'
-version = '1.0'
 
 android {
     compileSdkVersion 30
@@ -13,7 +11,7 @@ android {
         minSdkVersion 21
         targetSdkVersion 30
         versionCode 1
-        versionName "1.0"
+        versionName "1.0.1"
 
         testInstrumentationRunner "androidx.test.runner.AndroidJUnitRunner"
         consumerProguardFiles "consumer-rules.pro"
@@ -58,24 +56,24 @@ dependencies {
     androidTestImplementation 'androidx.test.ext:junit:1.1.2'
     androidTestImplementation 'androidx.test.espresso:espresso-core:3.3.0'
 }
-//ext {
-//    PUBLISH_GROUP_ID = 'com.github.amanv8060'
-//    PUBLISH_ARTIFACT_ID = 'aboutpagelib'
-//    PUBLISH_VERSION = android.defaultConfig.versionName
-//}
-
-//apply from: "${rootProject.projectDir}/scripts/publish-mavencentral.gradle"
-
-afterEvaluate {
-    publishing {
-        publications {
-            // Creates a Maven publication called "release".
-            release(MavenPublication) {
-                from components.release
-                groupId = 'com.github.amanv8060'
-                artifactId = 'aboutpagelib'
-                version = '1.0'
-            }
-        }
-    }
+ext {
+    PUBLISH_GROUP_ID = 'com.github.amanv8060'
+    PUBLISH_ARTIFACT_ID = 'aboutpagelib'
+    PUBLISH_VERSION = android.defaultConfig.versionName
 }
+
+apply from: "${rootProject.projectDir}/scripts/publish-mavencentral.gradle"
+
+//afterEvaluate {
+//    publishing {
+//        publications {
+//            // Creates a Maven publication called "release".
+//            release(MavenPublication) {
+//                from components.release
+//                groupId = 'com.github.amanv8060'
+//                artifactId = 'aboutpagelib'
+//                version = '1.0'
+//            }
+//        }
+//    }
+//}
