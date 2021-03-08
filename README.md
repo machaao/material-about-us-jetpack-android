@@ -28,7 +28,6 @@ In app build.gradle dependencies add
 
 ```
 implementation 'com.github.amanv8060:aboutpagelib:1.0.1'
-
 ```
 
 and you are good to go 
