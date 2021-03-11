@@ -13,17 +13,20 @@ import androidx.compose.ui.layout.ContentScale
 import androidx.compose.ui.res.vectorResource
 import androidx.compose.ui.unit.dp
 import android.content.Intent
+import androidx.compose.ui.graphics.painter.Painter
 import androidx.compose.ui.graphics.vector.ImageVector
+import androidx.compose.ui.res.painterResource
 import androidx.core.content.ContextCompat.startActivity
+import com.mx.aboutpage.R.drawable.*
 import com.mx.aboutpage.ui.theme.typography
 
 ///This Function returns all the social cards that are currently being shown in the ui
 @Composable
 fun socialCards(activity: Activity, config: AboutConfig) {
 
-    val fbicon = vectorResource(R.drawable.ic_facebook)
-    val twittericon = vectorResource(R.drawable.ic_twitter)
-    val webIcon = vectorResource(R.drawable.ic_web)
+    val fbicon = painterResource(ic_facebook)
+    val twittericon = painterResource(id = ic_twitter)
+    val webIcon = painterResource(ic_web)
     Card(
         modifier = Modifier
             .padding(8.dp)
@@ -44,8 +47,10 @@ fun socialCards(activity: Activity, config: AboutConfig) {
             ) {
 
                 Image(
+
+                    contentDescription = "Fb Icon",
                     alignment = Alignment.Center,
-                    imageVector = fbicon,
+                    painter = fbicon,
                     modifier = Modifier
                         .padding(8.dp)
                         .fillMaxHeight(),
@@ -79,8 +84,9 @@ fun socialCards(activity: Activity, config: AboutConfig) {
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Image(
+                    contentDescription ="Twitter Icon",
                     alignment = Alignment.Center,
-                    imageVector = twittericon,
+                    painter = twittericon,
                     modifier = Modifier
                         .padding(8.dp)
                         .fillMaxHeight(),
@@ -115,8 +121,9 @@ fun socialCards(activity: Activity, config: AboutConfig) {
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Image(
+                    contentDescription ="Website Icon" ,
                     alignment = Alignment.Center,
-                    imageVector = webIcon,
+                    painter = webIcon,
                     modifier = Modifier
                         .padding(8.dp)
                         .fillMaxHeight(),
@@ -146,8 +153,8 @@ fun socialCards(activity: Activity, config: AboutConfig) {
 
 @Composable
 fun privacyCards(activity: Activity, config: AboutConfig) {
-    val privacyIcon = vectorResource(R.drawable.ic_privacy)
-    val acknowledgementIcon = vectorResource(R.drawable.ic_acknowledgement)
+    val privacyIcon = painterResource(ic_privacy)
+    val acknowledgementIcon = painterResource(ic_acknowledgement)
 
     Card(
         modifier = Modifier
@@ -170,8 +177,9 @@ fun privacyCards(activity: Activity, config: AboutConfig) {
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Image(
+                    contentDescription = "Privacy Icon " ,
                     alignment = Alignment.Center,
-                    imageVector = privacyIcon,
+                    painter = privacyIcon,
                     modifier = Modifier
                         .padding(8.dp)
                         .fillMaxHeight(),
@@ -196,8 +204,9 @@ fun privacyCards(activity: Activity, config: AboutConfig) {
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Image(
+                    contentDescription = " Acknowledgement Icon",
                     alignment = Alignment.Center,
-                    imageVector = acknowledgementIcon,
+                    painter = acknowledgementIcon,
                     modifier = Modifier
                         .padding(8.dp)
                         .fillMaxHeight(),
@@ -216,8 +225,8 @@ fun privacyCards(activity: Activity, config: AboutConfig) {
 @Composable
 fun tryOtherApp(activity: Activity, config: AboutConfig) {
 
-    val tryOtherIcon = vectorResource(R.drawable.ic_try_other_apps)
-    val aboutIcon = vectorResource(R.drawable.ic_about)
+    val tryOtherIcon = painterResource(ic_try_other_apps)
+    val aboutIcon = painterResource(ic_about)
     Card(
         modifier = Modifier
             .padding(8.dp)
@@ -241,8 +250,9 @@ fun tryOtherApp(activity: Activity, config: AboutConfig) {
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Image(
+                    contentDescription = " Try other apps Icon" ,
                     alignment = Alignment.Center,
-                    imageVector = tryOtherIcon,
+                    painter = tryOtherIcon,
                     modifier = Modifier
                         .padding(8.dp)
                         .fillMaxHeight(),
@@ -269,8 +279,9 @@ fun tryOtherApp(activity: Activity, config: AboutConfig) {
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Image(
+                    contentDescription = " About ICon" ,
                     alignment = Alignment.Center,
-                    imageVector = aboutIcon,
+                    painter = aboutIcon,
                     modifier = Modifier
                         .padding(8.dp)
                         .fillMaxHeight(),
@@ -290,8 +301,8 @@ fun tryOtherApp(activity: Activity, config: AboutConfig) {
 @Composable
 fun reviewCards(activity: Activity, config: AboutConfig) {
 
-    val reviewIcon = vectorResource(R.drawable.ic_review)
-    val shareIcon = vectorResource(R.drawable.ic_share)
+    val reviewIcon = painterResource(ic_review)
+    val shareIcon = painterResource(ic_share)
     Card(
         modifier = Modifier
             .padding(8.dp)
@@ -314,8 +325,10 @@ fun reviewCards(activity: Activity, config: AboutConfig) {
                 verticalAlignment = Alignment.CenterVertically
             ) {
                 Image(
+                    contentDescription = "Review Icon",
+
                     alignment = Alignment.Center,
-                    imageVector = reviewIcon,
+                    painter = reviewIcon,
                     modifier = Modifier
                         .padding(8.dp)
                         .fillMaxHeight(),
@@ -341,8 +354,9 @@ fun reviewCards(activity: Activity, config: AboutConfig) {
 
                 ) {
                 Image(
+                    contentDescription = "Share Icon",
                     alignment = Alignment.Center,
-                    imageVector = shareIcon,
+                    painter = shareIcon,
                     modifier = Modifier
                         .padding(8.dp)
                         .fillMaxHeight(),
@@ -362,7 +376,7 @@ fun reviewCards(activity: Activity, config: AboutConfig) {
 
 @Composable
 fun supportCard(activity: Activity, config: AboutConfig) {
-    val supportIcon = vectorResource(R.drawable.ic_email)
+    val supportIcon = painterResource(ic_email)
     Card(
         modifier = Modifier
             .padding(8.dp)
@@ -384,8 +398,9 @@ fun supportCard(activity: Activity, config: AboutConfig) {
             verticalAlignment = Alignment.CenterVertically
         ) {
             Image(
+                contentDescription = "Support Icon" ,
                 alignment = Alignment.Center,
-                imageVector = supportIcon,
+                painter = supportIcon,
                 modifier = Modifier
                     .padding(8.dp)
                     .fillMaxHeight(),
@@ -402,9 +417,9 @@ fun supportCard(activity: Activity, config: AboutConfig) {
 
 @Composable
 fun topCards(config: AboutConfig) {
-    var supportIcon: ImageVector = vectorResource(R.drawable.ic_web)
+    var supportIcon: Painter = painterResource(ic_web)
     if (config.appIcon != null) {
-        supportIcon = vectorResource(config.appIcon!!.toInt())
+        supportIcon = painterResource(config.appIcon!!.toInt())
     }
     Card(
         modifier = Modifier
@@ -419,8 +434,9 @@ fun topCards(config: AboutConfig) {
             verticalAlignment = Alignment.CenterVertically
         ) {
             if (config.appIcon != null) Image(
+                contentDescription = "Support Icon" ,
                 alignment = Alignment.Center,
-                imageVector = supportIcon,
+                painter = supportIcon,
                 modifier = Modifier
                     .padding(8.dp)
                     .fillMaxHeight(),

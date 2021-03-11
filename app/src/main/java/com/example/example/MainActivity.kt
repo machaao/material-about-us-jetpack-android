@@ -2,7 +2,7 @@ package com.example.example
 
 import android.os.Bundle
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.ui.platform.setContent
+import androidx.activity.compose.setContent
 import com.mx.aboutpage.AboutActivity
 import com.mx.aboutpage.AboutConfig
 

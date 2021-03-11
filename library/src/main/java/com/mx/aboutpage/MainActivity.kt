@@ -1,8 +1,10 @@
 package com.mx.aboutpage
 
 import android.os.Bundle
+
+import androidx.activity.compose.setContent
 import androidx.appcompat.app.AppCompatActivity
-import androidx.compose.ui.platform.setContent
+
 import com.mx.aboutpage.ui.theme.ExampleTheme
 
 class MainActivity : AppCompatActivity() {

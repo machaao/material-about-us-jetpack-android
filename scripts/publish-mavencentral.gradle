@@ -54,7 +54,7 @@ publishing {
 
             pom {
                 name = PUBLISH_ARTIFACT_ID
-                description = 'A Kotlin SharedPreferences wrapper'
+                description = 'An About Page Library written in Jetpack Compose'
                 url = 'https://github.com/amanv8060/aboutpagelib'
                 licenses {
                     license {
