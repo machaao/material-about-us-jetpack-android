@@ -27,7 +27,7 @@ repositories {
 In app build.gradle dependencies add 
 
 ```
-implementation 'com.github.amanv8060:aboutpagelib:1.0.1'
+implementation 'com.github.amanv8060:aboutpagelib:2.0.0'
 ```
 
 and you are good to go 
