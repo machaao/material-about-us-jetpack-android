@@ -1,13 +1,17 @@
 package com.example.example
 
 import android.os.Bundle
+import androidx.activity.ComponentActivity
 import androidx.appcompat.app.AppCompatActivity
 import androidx.activity.compose.setContent
+import androidx.compose.material.Surface
+import com.example.example.ui.theme.ExampleTheme
+import com.example.example.ui.theme.purple200
 import com.mx.aboutpage.AboutActivity
 import com.mx.aboutpage.AboutConfig
 
 
-class MainActivity : AppCompatActivity() {
+class MainActivity : ComponentActivity() {
 
     var aboutConfig: AboutConfig = AboutConfig().getInstance()
     override fun onCreate(savedInstanceState: Bundle?) {
@@ -29,8 +33,10 @@ class MainActivity : AppCompatActivity() {
         aboutConfig.emailAddress = "verma1090aman@gmail.com"
 
         setContent {
-            //Launches the about Page
-            AboutActivity().launch(this)
+            ExampleTheme() {
+                 AboutActivity().launchWithoutDefaultTheme(activity = this)
+
+            }
         }
     }
 }

@@ -2,9 +2,6 @@ package com.mx.aboutpage
 
 import android.app.Activity
 import androidx.compose.foundation.layout.padding
-import androidx.compose.material.Scaffold
-import androidx.compose.material.Text
-import androidx.compose.material.TopAppBar
 import androidx.compose.runtime.Composable
 import androidx.compose.ui.Modifier
 import androidx.compose.ui.unit.dp
@@ -14,8 +11,11 @@ import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.lazy.LazyColumn
 import androidx.compose.foundation.rememberScrollState
 import androidx.compose.foundation.verticalScroll
+import androidx.compose.material.*
 import androidx.compose.runtime.remember
+import androidx.compose.ui.res.painterResource
 import com.mx.aboutpage.ui.theme.ExampleTheme
+import com.mx.aboutpage.ui.theme.purple200
 
 
 class AboutActivity {
@@ -26,12 +26,35 @@ class AboutActivity {
     fun launch(activity: Activity) {
         ExampleTheme() {
             // A surface container using the 'background' color from the theme
+            Surface(color = purple200) {
+                Scaffold(
+                    topBar = {
+                        TopAppBar(
+                            title = { Text(text = "About") },
+                        )
+                    }
+                ) {
+                    mainListItems(activity = activity, config = aboutConfig)
+                }
+            }
+
+        }
+    }
+
+    @Composable
+    fun launchWithoutDefaultTheme(activity: Activity) {
+
+
             Scaffold(
-                topBar = { TopAppBar(title = { Text(text = "About") }) }
+                topBar = {
+                    TopAppBar(
+                        title = { Text(text = "About") },
+                    )
+                }
             ) {
                 mainListItems(activity = activity, config = aboutConfig)
             }
-        }
+
     }
 
     @Composable
@@ -43,7 +66,7 @@ class AboutActivity {
                 .padding(
                     8.dp
                 )
-                .verticalScroll(rememberScrollState() ,enabled = true)
+                .verticalScroll(rememberScrollState(), enabled = true)
         ) {
             topCards(config)
             supportCard(activity, config)
